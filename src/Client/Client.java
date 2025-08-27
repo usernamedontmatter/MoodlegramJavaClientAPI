@@ -41,8 +41,10 @@ public class Client {
         this.iostream_creator = iostream_creator;
     }
 
-    public void register(EncryptingLayoutInterface encrypting_layout) throws Exception {
+    public <T extends EncryptingLayoutInterface> void register(Class<T> encrypting_class) throws Exception {
         if(is_registered) throw new ClientAlreadyRegisteredError();
+
+        T encrypting_layout = encrypting_class.getConstructor().newInstance();
 
         IOStreamInterface iostream = iostream_creator.getStream();
         iostream.openStream();
@@ -93,8 +95,10 @@ public class Client {
         }
     }
 
-    public void sendMessage(long id, String message, EncryptingLayoutInterface encrypting_layout) throws Exception {
+    public <T extends EncryptingLayoutInterface> void sendMessage(long id, String message, Class<T> encrypting_class) throws Exception {
         if(!is_registered) throw new ClientHasNotRegisteredError();
+
+        T encrypting_layout = encrypting_class.getConstructor().newInstance();
 
         IOStreamInterface iostream = iostream_creator.getStream();
         iostream.openStream();
@@ -146,8 +150,10 @@ public class Client {
 
         iostream.closeStream();
     }
-    public Message[] getMessages(EncryptingLayoutInterface encrypting_layout) throws Exception {
+    public <T extends EncryptingLayoutInterface> Message[] getMessages(Class<T> encrypting_class) throws Exception {
         if(!is_registered) throw new ClientHasNotRegisteredError();
+
+        T encrypting_layout = encrypting_class.getConstructor().newInstance();
 
         IOStreamInterface iostream = iostream_creator.getStream();
         iostream.openStream();

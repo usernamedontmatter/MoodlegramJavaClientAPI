@@ -2,11 +2,11 @@
 ## Project
 This project is client part lib of Moodlegram
 
-API version: 1.0
+API version: 1.0.0
 
-Server API version: 1.0
+Server API version: 1.0.0
 
-ClientAPI version: 1.0
+ClientAPI version: 1.1.0
 
 
 ## Moodlegram
