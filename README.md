@@ -11,7 +11,7 @@ ClientAPI version: 1.1.0
 
 ## Moodlegram
 
-Moodlegram is an opensource messanger specializing on security, privacy and fault tolerance
+Moodlegram is an opensource messenger specializing on security, privacy and fault tolerance
 
 [Tmaou27](https://github.com/Tmaou27) is author of original Moodlegram
 
